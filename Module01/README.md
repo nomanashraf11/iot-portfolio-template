@@ -1,25 +1,18 @@
 # Module 1
 
-> When you start editing this file, remove this description.
->
-> Usually the first things you have to document are some inspirations hinting at what
-> you might be able to build in this class, a personal profile description regarding
-> programming expertise, previous MCU knowledge, creative qualities, and expectations
-
-Module description
 
 ## Task Inspirations
 
-- It was interesting have not interacted with Iot devices before so learning and seeing the magic was great
-- Want to see how iot devices operate and work in ecosystem
+- It was interesting. I have not interacted with IoT devices before, so learning and seeing the magic was great
+- Want to see how IOT devices operate and work in an ecosystem
 
 ## Task Personal Profile
 
-- I have a background in web development related to java, database, microservices and typescript frameworks as well
+- I have a background in web development related to Java, database, microservices, and typescript framework,s as well
 
 ## Task What is IoT
 
-IoT (Internet of Things) refers to a network of interconnected devices that communicate and exchange data over the internet without requiring direct human intervention.
+IoT (Internet of Things) refers to a network of interconnected devices communicating and exchanging data over the Internet without requiring direct human intervention.
 
 Domains and included areas:
 
