@@ -1,0 +1,717 @@
+[
+    {
+        "id": "10ff93180435f3a2",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "540e52f7fcfc8f43",
+        "type": "mqtt in",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "topic": "temp_hum/ht01/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1bb793d02e7a38ca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "e732849f25b478d4",
+                "bc8c81caf8d3881c"
+            ]
+        ]
+    },
+    {
+        "id": "e732849f25b478d4",
+        "type": "ui_gauge",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "727e364d73eca6df",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temp",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2483e5119f0af59b",
+        "type": "mqtt in",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "topic": "temp_hum/ht01/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1bb793d02e7a38ca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "a01ba6a2a756101c"
+            ]
+        ]
+    },
+    {
+        "id": "a01ba6a2a756101c",
+        "type": "ui_gauge",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "727e364d73eca6df",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Hum",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ca9fe8d5cbe56898",
+        "type": "mqtt in",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "topic": "light_sensor/lux",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1bb793d02e7a38ca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "f14532cd0fedc9ac",
+                "7f1b6695c4713420"
+            ]
+        ]
+    },
+    {
+        "id": "f14532cd0fedc9ac",
+        "type": "ui_gauge",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "5a9d90d5d70d3285",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Light",
+        "label": "LUX",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "74afb749c7800432",
+        "type": "mqtt out",
+        "z": "10ff93180435f3a2",
+        "name": "lightwitch",
+        "topic": "led_mtrx_2/strip1/rgb/set",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb793d02e7a38ca",
+        "x": 620,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "e0a6498749a2569e",
+        "type": "ui_switch",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "label": "switch for lights",
+        "tooltip": "",
+        "group": "5a9d90d5d70d3285",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "130,75,0",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "74afb749c7800432",
+                "db0f8663675193f1"
+            ]
+        ]
+    },
+    {
+        "id": "99612b2b3b937af1",
+        "type": "mqtt in",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "topic": "moisture_sensor/moisture_sensor",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1bb793d02e7a38ca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "f7949f96b9683702",
+                "710fec5b036a91e1"
+            ]
+        ]
+    },
+    {
+        "id": "f7949f96b9683702",
+        "type": "ui_gauge",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "cab563948300434d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Moisture",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 420,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "22012f24da4594c0",
+        "type": "ui_switch",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "label": "switch for pump",
+        "tooltip": "",
+        "group": "cab563948300434d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 620,
+        "y": 680,
+        "wires": [
+            [
+                "2fe4f3a4d794ae64"
+            ]
+        ]
+    },
+    {
+        "id": "2fe4f3a4d794ae64",
+        "type": "mqtt out",
+        "z": "10ff93180435f3a2",
+        "name": "pumpswitch",
+        "topic": "home/motor",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb793d02e7a38ca",
+        "x": 870,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "82db4bc3b2e70fc0",
+        "type": "mqtt out",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "topic": "servo/m1/set",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb793d02e7a38ca",
+        "x": 1170,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "db0f8663675193f1",
+        "type": "mqtt out",
+        "z": "10ff93180435f3a2",
+        "name": "lightwitch",
+        "topic": "led_mtrx_2/strip1/set",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb793d02e7a38ca",
+        "x": 620,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7f1b6695c4713420",
+        "type": "function",
+        "z": "10ff93180435f3a2",
+        "name": "function 1",
+        "func": "if (parseInt(msg.payload) < 100) { return { payload: \"130,75,0\"} }\nelse { return {payload: \"off\"} }\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "e0a6498749a2569e"
+            ]
+        ]
+    },
+    {
+        "id": "bc8c81caf8d3881c",
+        "type": "function",
+        "z": "10ff93180435f3a2",
+        "name": "function 3",
+        "func": "if (parseInt(msg.payload) < 22) { return { payload: \"45\"} }\nelse { return {payload: \"135\"} }\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "72d2253d6406ec8b"
+            ]
+        ]
+    },
+    {
+        "id": "72d2253d6406ec8b",
+        "type": "rbe",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 650,
+        "y": 120,
+        "wires": [
+            [
+                "f7971e7797593c74"
+            ]
+        ]
+    },
+    {
+        "id": "3dbbebe440a97471",
+        "type": "trigger",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "op1": "ON",
+        "op2": "OFF",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "1000",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 440,
+        "y": 800,
+        "wires": [
+            [
+                "22012f24da4594c0"
+            ]
+        ]
+    },
+    {
+        "id": "710fec5b036a91e1",
+        "type": "switch",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 170,
+        "y": 760,
+        "wires": [
+            [
+                "50efa72749a3e3ac"
+            ]
+        ]
+    },
+    {
+        "id": "50efa72749a3e3ac",
+        "type": "delay",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 840,
+        "wires": [
+            [
+                "3dbbebe440a97471"
+            ]
+        ]
+    },
+    {
+        "id": "7ed2afcc188353a0",
+        "type": "ui_button",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "727e364d73eca6df",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Close the window",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "45",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 970,
+        "y": 60,
+        "wires": [
+            [
+                "82db4bc3b2e70fc0"
+            ]
+        ]
+    },
+    {
+        "id": "5e1f0081.6dc3c",
+        "type": "ui_template",
+        "z": "10ff93180435f3a2",
+        "group": "35d332f2e099b883",
+        "name": "window redirect",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(data) {\n        if (data == \"Webcam\") {\n          window.open(\"http://192.168.14.49\");\n          //window.location.href = \"http://192.168.14.49;\n        } \n\n    });\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 220,
+        "wires": [
+            [
+                "8582289.2d757d8"
+            ]
+        ]
+    },
+    {
+        "id": "23caf401.9d6d4c",
+        "type": "ui_button",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "35d332f2e099b883",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Webcam",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Webcam",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "5e1f0081.6dc3c"
+            ]
+        ]
+    },
+    {
+        "id": "8582289.2d757d8",
+        "type": "debug",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "bc3f74c857e16bf7",
+        "type": "ui_button",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "group": "727e364d73eca6df",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Open the window",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "135",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "82db4bc3b2e70fc0"
+            ]
+        ]
+    },
+    {
+        "id": "f7971e7797593c74",
+        "type": "delay",
+        "z": "10ff93180435f3a2",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "4",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 120,
+        "wires": [
+            [
+                "82db4bc3b2e70fc0"
+            ]
+        ]
+    },
+    {
+        "id": "1bb793d02e7a38ca",
+        "type": "mqtt-broker",
+        "name": "gateway",
+        "broker": "192.168.14.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "727e364d73eca6df",
+        "type": "ui_group",
+        "name": "Temp",
+        "tab": "8919529a084ea389",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5a9d90d5d70d3285",
+        "type": "ui_group",
+        "name": "Lights",
+        "tab": "8919529a084ea389",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cab563948300434d",
+        "type": "ui_group",
+        "name": "Soil",
+        "tab": "8919529a084ea389",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35d332f2e099b883",
+        "type": "ui_group",
+        "name": "Webcam",
+        "tab": "8919529a084ea389",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8919529a084ea389",
+        "type": "ui_tab",
+        "name": "SmartGreenHouse",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
